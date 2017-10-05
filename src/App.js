@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form'
+import TaskList from './TaskList'
 
 class App extends Component {
   constructor(props){
@@ -26,29 +27,9 @@ class App extends Component {
         <Form addTask={this.addTask} />
 
         <div className="flex-container">
-          <div className="list-box">
-            <h2>To-Do</h2>
-            <ul>
-              <li><button>&lt;</button>Task 1<button>&gt;</button></li>
-              <li><button>&lt;</button>Task<button>&gt;</button></li>
-            </ul>
-          </div>
-
-          <div className="list-box">
-            <h2>Working</h2>
-            <ul>
-              <li><button>&lt;</button>Task 1<button>&gt;</button></li>
-              <li><button>&lt;</button>Task<button>&gt;</button></li>
-            </ul>
-          </div>
-
-          <div className="list-box">
-            <h2>Complete</h2>
-            <ul>
-              <li><button>&lt;</button>Task 1<button>&gt;</button></li>
-              <li><button>&lt;</button>Task<button>&gt;</button></li>
-            </ul>
-          </div>
+          <TaskList title="To-Do" key="0" list={this.state.todo} />
+          <TaskList title="Working" key="1" list={this.state.working} />
+          <TaskList title="Complete" key="2" list={this.state.complete} />
         </div>
       </div>
     );
