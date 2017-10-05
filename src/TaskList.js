@@ -15,9 +15,9 @@ class TaskList extends Component {
       <div className="list-box">
         <h2>{this.props.title}</h2>
         <ul>
-          {this.props.list.map(function(item, index){
+          {this.props.list.map((item, index)=>{
             return(
-              <Task taskName={item} key={index} />
+              <Task taskName={item} key={index} listIndex={this.props.index} moveTask={this.props.moveTask} />
             );
           })}
         </ul>
@@ -30,7 +30,8 @@ class TaskList extends Component {
 TaskList.PropTypes = {
   title: PropTypes.string,
   list: PropTypes.array,
-  key: PropTypes.number
+  index: PropTypes.number,
+  moveTask: PropTypes.func
 }
 
 export default TaskList;

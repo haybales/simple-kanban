@@ -8,10 +8,16 @@ class Task extends Component {
 
   }
 
+  move(direction){
+    this.props.moveTask(this.props.taskName, this.props.listIndex, direction);
+  }
+
 
   render(){
     return(
-      <li><button>&lt;</button>{this.props.taskName}<button>&gt;</button></li>
+      <li><button onClick={()=>{this.move("left")}}>&lt;</button>
+      {this.props.taskName}
+      <button onClick={()=>{this.move("right")}}>&gt;</button></li>
     );
   }
 
@@ -19,7 +25,8 @@ class Task extends Component {
 
 Task.PropTypes = {
   taskName: PropTypes.string,
-  key: PropTypes.number
+  listIndex: PropTypes.number,
+  moveTask: PropTypes.func
 }
 
 export default Task;
