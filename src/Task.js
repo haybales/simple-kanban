@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 
 class Task extends Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
   move(direction){
     this.props.moveTask(this.props.taskName, this.props.listIndex, direction);
   }

@@ -4,12 +4,6 @@ import Task from './Task';
 
 class TaskList extends Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
-
   render(){
     return(
       <div className="list-box">
